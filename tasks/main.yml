@@ -1,0 +1,15 @@
+---
+# tasks file for hnakamur.anyenv
+- git: repo="{{ anyenv_git_url }}" dest="{{ anyenv_install_dir }}"
+
+- lineinfile: dest="{{ anyenv_shell_rc_file }}"
+    line='# anyenv'
+    state=present
+
+- lineinfile: dest="{{ anyenv_shell_rc_file }}"
+    line='export PATH="$HOME/.anyenv/bin:$PATH"'
+    state=present
+
+- lineinfile: dest="{{ anyenv_shell_rc_file }}"
+    line='eval "$(anyenv init -)"'
+    state=present

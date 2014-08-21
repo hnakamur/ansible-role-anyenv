@@ -1,0 +1,5 @@
+---
+# defaults file for hnakamur.anyenv
+anyenv_git_url: https://github.com/riywo/anyenv
+anyenv_install_dir: ~/.anyenv
+anyenv_shell_rc_file: ~/.zshrc
