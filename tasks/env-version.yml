@@ -9,7 +9,6 @@
 - shell: >
     "{{ anyenv_env_name }}" global
   register: anyenv_global_version
-  changed_when: false
 
 - shell: >
     "{{ anyenv_env_name }}" global {{ anyenv_env_version }}

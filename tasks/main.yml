@@ -3,8 +3,19 @@
 - include: anyenv.yml
   tags: [anyenv_initial_setup]
 
-- include: env.yml anyenv_env_name=rbenv anyenv_env_version="{{ anyenv_rbenv_version }}"
+- shell: >
+    anyenv install {{ item }}
+    creates={{ anyenv_install_dir }}/envs/{{ item }}
+  with_items:
+    - rbenv
+    - ndenv
+  tags: [anyenv_install_envs]
+
+# NOTE: We must include for each env manually
+# because include + with_items is a removed deprecated feature in Ansible
+#
+- include: env-version.yml anyenv_env_name=rbenv anyenv_env_version="{{ anyenv_rbenv_version }}"
   when: anyenv_rbenv_version != ""
 
-- include: env.yml anyenv_env_name=ndenv anyenv_env_version="{{ anyenv_ndenv_version }}"
+- include: env-version.yml anyenv_env_name=ndenv anyenv_env_version="{{ anyenv_ndenv_version }}"
   when: anyenv_ndenv_version != ""
