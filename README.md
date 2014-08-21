@@ -6,7 +6,14 @@ An Ansible role to install anyenv
 Requirements
 ------------
 
-None.
+The directory specified zsh_rc_dir must be created by running hnakamur.zsh.
+The zsh config file `anyenv` will be added to the directory.
+
+To load this `anyenv` file, you must run the following command in the shell.
+
+```
+exec $SHELL -l
+```
 
 Role Variables
 --------------
@@ -15,8 +22,6 @@ Role Variables
     - The url of the anyenv git repository.
 - anyenv_install_dir: ~/.anyenv
     - The install directory.
-- anyenv_shell_rc_file: ~/.zshrc
-    - The shell config file to add anyenv initialization.
 - anyenv_rbenv_version: 2.1.2
     - The rbenv version to install. Does not install when empty.
 - anyenv_ndenv_version: v0.10.30
@@ -25,7 +30,7 @@ Role Variables
 Dependencies
 ------------
 
-None.
+- hnakamur.zsh: for zsh_rc_dir
 
 Example Playbook
 ----------------
