@@ -3,7 +3,7 @@
     creates={{ anyenv_install_dir }}/envs/{{ anyenv_env_name }}
 
 - shell: >
-    "{{ anyenv_env_name }}" install {{ anyenv_env_version }}
+    "{{ any_env_config|default() }}" "{{ anyenv_env_name }}" install {{ anyenv_env_version }}
     creates={{ anyenv_install_dir }}/envs/{{ anyenv_env_name }}/versions/{{ anyenv_env_version }}
 
 - shell: >
