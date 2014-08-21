@@ -3,3 +3,6 @@
 anyenv_git_url: https://github.com/riywo/anyenv
 anyenv_install_dir: ~/.anyenv
 anyenv_shell_rc_file: ~/.zshrc
+
+anyenv_rbenv_version: 2.1.2
+anyenv_ndenv_version: v0.10.30

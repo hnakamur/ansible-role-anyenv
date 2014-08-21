@@ -1,15 +1,10 @@
 ---
 # tasks file for hnakamur.anyenv
-- git: repo="{{ anyenv_git_url }}" dest="{{ anyenv_install_dir }}"
+- include: anyenv.yml
+  tags: [anyenv_initial_setup]
 
-- lineinfile: dest="{{ anyenv_shell_rc_file }}"
-    line='# anyenv'
-    state=present
+- include: env.yml anyenv_env_name=rbenv anyenv_env_version="{{ anyenv_rbenv_version }}"
+  when: anyenv_rbenv_version != ""
 
-- lineinfile: dest="{{ anyenv_shell_rc_file }}"
-    line='export PATH="$HOME/.anyenv/bin:$PATH"'
-    state=present
-
-- lineinfile: dest="{{ anyenv_shell_rc_file }}"
-    line='eval "$(anyenv init -)"'
-    state=present
+- include: env.yml anyenv_env_name=ndenv anyenv_env_version="{{ anyenv_ndenv_version }}"
+  when: anyenv_ndenv_version != ""
