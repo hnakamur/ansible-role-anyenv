@@ -1,7 +1,6 @@
 ---
 # tasks file for hnakamur.anyenv
 - include: anyenv.yml
-  tags: [anyenv_initial_setup]
 
 - shell: >
     eval "$(anyenv init -)";
@@ -12,7 +11,6 @@
   with_items:
     - rbenv
     - ndenv
-  tags: [anyenv_install_envs]
 
 - include: rbenv-version.yml
   when: anyenv_rbenv_version != ""
