@@ -1,16 +1,24 @@
 - shell: >
+    export PATH="$HOME/.anyenv/bin:$PATH";
+    eval "$(anyenv init -)";
     anyenv install {{ anyenv_env_name }}
     creates={{ anyenv_install_dir }}/envs/{{ anyenv_env_name }}
 
 - shell: >
+    export PATH="$HOME/.anyenv/bin:$PATH";
+    eval "$(anyenv init -)";
     "{{ any_env_config|default() }}" "{{ anyenv_env_name }}" install {{ anyenv_env_version }}
     creates={{ anyenv_install_dir }}/envs/{{ anyenv_env_name }}/versions/{{ anyenv_env_version }}
 
 - shell: >
+    export PATH="$HOME/.anyenv/bin:$PATH";
+    eval "$(anyenv init -)";
     "{{ anyenv_env_name }}" global
   register: anyenv_global_version
   changed_when: False
 
 - shell: >
+    export PATH="$HOME/.anyenv/bin:$PATH";
+    eval "$(anyenv init -)";
     "{{ anyenv_env_name }}" global {{ anyenv_env_version }}
   when: anyenv_global_version.stdout != anyenv_env_version

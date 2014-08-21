@@ -4,6 +4,8 @@
   tags: [anyenv_initial_setup]
 
 - shell: >
+    export PATH="$HOME/.anyenv/bin:$PATH";
+    eval "$(anyenv init -)";
     anyenv install {{ item }}
     creates={{ anyenv_install_dir }}/envs/{{ item }}
   with_items:
