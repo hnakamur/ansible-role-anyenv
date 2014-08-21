@@ -4,10 +4,11 @@
   tags: [anyenv_initial_setup]
 
 - shell: >
-    export PATH="$HOME/.anyenv/bin:$PATH";
     eval "$(anyenv init -)";
     anyenv install {{ item }}
     creates={{ anyenv_install_dir }}/envs/{{ item }}
+  environment:
+    PATH: "{{ anyenv_install_dir }}/bin:{{ lookup('env', 'PATH') }}"
   with_items:
     - rbenv
     - ndenv
@@ -16,5 +17,5 @@
 - include: rbenv-version.yml
   when: anyenv_rbenv_version != ""
 
-- include: env-version.yml anyenv_env_name=ndenv anyenv_env_version="{{ anyenv_ndenv_version }}"
+- include: env-version.yml anyenv_env_name=ndenv anyenv_env_version={{ anyenv_ndenv_version }}
   when: anyenv_ndenv_version != ""
