@@ -1,0 +1,10 @@
+- homebrew: update_homebrew=yes
+
+- homebrew: name={{ item }} state=latest
+  with_items:
+    - readline
+    - openssl
+
+- include: >
+    env-version.yml anyenv_env_name=rbenv anyenv_env_version="{{ anyenv_rbenv_version }}"
+    any_env_config='RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`"'

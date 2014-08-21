@@ -11,10 +11,7 @@
     - ndenv
   tags: [anyenv_install_envs]
 
-# NOTE: We must include for each env manually
-# because include + with_items is a removed deprecated feature in Ansible
-#
-- include: env-version.yml anyenv_env_name=rbenv anyenv_env_version="{{ anyenv_rbenv_version }}" any_env_config='CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl`"'
+- include: rbenv-version.yml
   when: anyenv_rbenv_version != ""
 
 - include: env-version.yml anyenv_env_name=ndenv anyenv_env_version="{{ anyenv_ndenv_version }}"
