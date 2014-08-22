@@ -17,5 +17,5 @@
 - include: rbenv-version.yml
   when: anyenv_rbenv_version != ""
 
-- include: env-version.yml anyenv_env_name=ndenv anyenv_env_version={{ anyenv_ndenv_version }}
+- include: ndenv-version.yml
   when: anyenv_ndenv_version != ""

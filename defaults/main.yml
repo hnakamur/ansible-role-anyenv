@@ -9,3 +9,6 @@ anyenv_rbenv_global_gems:
   - compass
 
 anyenv_ndenv_version: v0.10.30
+anyenv_ndenv_global_packages:
+  - grunt-cli
+  - gulp
