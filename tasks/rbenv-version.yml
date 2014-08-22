@@ -1,5 +1,3 @@
-- homebrew: update_homebrew=yes
-
 - homebrew: name={{ item }} state=latest
   with_items:
     - readline

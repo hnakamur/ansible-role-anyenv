@@ -6,6 +6,16 @@ An Ansible role to install anyenv
 Requirements
 ------------
 
+### Update homebrew manually beforehand
+
+You need to update homebrew in advance with the following task.
+
+```
+- homebrew: update_homebrew=yes
+```
+
+### Restart the shell after running this playbook
+
 The directory specified zsh_rc_dir must be created by running hnakamur.zsh.
 The zsh config file `anyenv` will be added to the directory.
 
