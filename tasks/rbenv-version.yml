@@ -6,7 +6,8 @@
 - include: >
     env-version.yml anyenv_env_name=rbenv anyenv_env_version={{ anyenv_rbenv_version }}
 
-- gem: name={{ item }} state=absent executable={{ anyenv_install_dir }}/envs/rbenv/shims/gem
+- shell: >
+    "{{ anyenv_install_dir | replace('~', '$HOME') }}/envs/rbenv/shims/gem" install {{ item }}
   with_items: anyenv_rbenv_global_gems
 
 - shell: >
