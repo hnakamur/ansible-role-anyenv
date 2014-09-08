@@ -14,3 +14,5 @@ anyenv_ndenv_global_packages:
   - gulp
   - webpack
   - karma-cli
+
+anyenv_npm_default_license: MIT

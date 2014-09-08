@@ -34,8 +34,18 @@ Role Variables
     - The install directory.
 - anyenv_rbenv_version: 2.1.2
     - The rbenv version to install. Does not install when empty.
-- anyenv_ndenv_version: v0.10.30
+- anyenv_rbenv_global_gems:
+    - bundler
+    - compass
+- anyenv_ndenv_version: v0.10.31
     - The ndenv version to install. Does not install when empty.
+- anyenv_ndenv_global_packages:
+    - grunt-cli
+    - gulp
+    - webpack
+    - karma-cli
+
+- anyenv_npm_default_license: MIT
 
 Dependencies
 ------------

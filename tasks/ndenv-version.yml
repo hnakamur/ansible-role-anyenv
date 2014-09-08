@@ -6,3 +6,5 @@
 
 - shell: >
     "{{ anyenv_install_dir | replace('~', '$HOME') }}/envs/ndenv/bin/ndenv" rehash
+
+- lineinfile: dest=~/.npmrc state=present line="init.license={{ anyenv_npm_default_license }}"
