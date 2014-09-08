@@ -8,7 +8,9 @@ anyenv_rbenv_global_gems:
   - bundler
   - compass
 
-anyenv_ndenv_version: v0.10.30
+anyenv_ndenv_version: v0.10.31
 anyenv_ndenv_global_packages:
   - grunt-cli
   - gulp
+  - webpack
+  - karma-cli
