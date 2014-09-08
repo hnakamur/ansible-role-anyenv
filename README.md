@@ -16,7 +16,7 @@ You need to update homebrew in advance with the following task.
 
 ### Restart the shell after running this playbook
 
-The directory specified zsh_rc_dir must be created by running hnakamur.zsh.
+The directory specified zsh_custom_dir must be created by running hnakamur.oh-my-zsh.
 The zsh config file `anyenv` will be added to the directory.
 
 To load this `anyenv` file, you must run the following command in the shell.
@@ -40,7 +40,7 @@ Role Variables
 Dependencies
 ------------
 
-- hnakamur.zsh: for zsh_rc_dir
+- hnakamur.oh-my-zsh
 
 Example Playbook
 ----------------

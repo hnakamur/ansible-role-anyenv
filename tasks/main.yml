@@ -2,7 +2,7 @@
 # tasks file for hnakamur.anyenv
 - git: repo="{{ anyenv_git_url }}" dest="{{ anyenv_install_dir }}"
 
-- template: src=anyenv.rc.j2 dest={{ zsh_rc_dir }}/anyenv
+- template: src=anyenv.rc.j2 dest={{ zsh_custom_dir }}/anyenv.zsh
 
 - shell: >
     eval "$(anyenv init -)";

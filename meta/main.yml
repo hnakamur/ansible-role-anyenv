@@ -11,4 +11,4 @@ galaxy_info:
   categories:
   - development
 dependencies:
-  - hnakamur.zsh
+  - hnakamur.oh-my-zsh
