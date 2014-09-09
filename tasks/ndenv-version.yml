@@ -9,4 +9,4 @@
     "{{ anyenv_install_dir | replace('~', '$HOME') }}/envs/ndenv/bin/ndenv" rehash
   when: anyenv_node_packages_installed|changed
 
-- lineinfile: dest=~/.npmrc state=present line="init.license={{ anyenv_npm_default_license }}"
+- lineinfile: dest=~/.npmrc state=present create=yes line="init.license={{ anyenv_npm_default_license }}"
